@@ -14,14 +14,14 @@ export default function Blogs() {
     {
       id: 2,
       title: 'How to Improve Your SEO Ranking',
-      excerpt: 'SEO is key to getting traffic. Here are some actionable tips that can improve your website’s SEO.',
+      excerpt: 'SEO is key to getting traffic. Here are some actionable tips that can improve your websites SEO.',
       date: 'October 9, 2024',
       link: '/blogs/improve-your-seo-ranking'
     },
     {
       id: 3,
       title: 'Creating Engaging Blog Content',
-      excerpt: 'Writing content that engages readers is an art. Here’s how you can make sure your blog posts stand out.',
+      excerpt: 'Writing content that engages readers is an art. Heres how you can make sure your blog posts stand out.',
       date: 'October 5, 2024',
       link: '/blogs/creating-engaging-content'
     },

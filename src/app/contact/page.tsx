@@ -163,10 +163,10 @@ export default function ContactCard() {
               Share Your Thoughts, Questions, and Ideas
             </h1>
             <p className="text-gray-500 mt-11">
-              At [Blog Name], we are committed to building a community of readers who share ideas, questions, and feedback. Whether you have suggestions or just want to drop a hello, we'd love to hear from you.
+              At [Blog Name], we are committed to building a community of readers who share ideas, questions, and feedback. Whether you have suggestions or just want to drop a hello, we would d love to hear from you.
             </p>
             <p className="text-gray-500 mt-4">
-              Fill out the form above to get in touch, and we’ll respond as soon as possible!
+              Fill out the form above to get in touch, and we will respond as soon as possible!
             </p>
           </div>
         </div>
