@@ -23,4 +23,4 @@ export default function Keyframe() {
       </div>
   
     <Card/>
-    <Footer/></div>);}
+    </div>);}
