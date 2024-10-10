@@ -3,7 +3,7 @@ import styles from "./page.module.css"; // Import your CSS module
 import image from "../app/1.webp"; // Import the image from the app folder
 import Navbar from "./components/navbar";
 import Card from "./components/card";
-import Footer from "./components/footer";
+
 
 export default function Keyframe() {
   return (
