@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaPen, FaBook, FaUsers } from "react-icons/fa"; // Icons for a blog
+// import { FaPen, FaBook, FaUsers } from "react-icons/fa"; // Icons for a blog
 import Navbar from "../components/navbar";
 
 export default function About() {
@@ -16,17 +16,17 @@ export default function About() {
       <section className="bg-bg py-12 px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <FaPen className="mx-auto mb-4 text-gray-800" size={100} />
+   
             <h3 className="text-2xl font-bold text-gray-800">Expert Writers</h3>
             <p className="text-gray-600">Our talented writers create engaging and well-researched content on various topics.</p>
           </div>
           <div>
-            <FaBook className="mx-auto mb-4 text-gray-800" size={100} />
+            {/* <FaBook className="mx-auto mb-4 text-gray-800" size={100} /> */}
             <h3 className="text-2xl font-bold text-gray-800">Diverse Topics</h3>
-            <p className="text-gray-600">We cover a wide range of subjects from technology to lifestyle, ensuring there's something for everyone.</p>
+            <p className="text-gray-600">We cover a wide range of subjects from technology to lifestyle, ensuring theres something for everyone.</p>
           </div>
           <div>
-            <FaUsers className="mx-auto mb-4 text-gray-800" size={100} />
+            {/* <FaUsers className="mx-auto mb-4 text-gray-800" size={100} /> */}
             <h3 className="text-2xl font-bold text-gray-800">Engaged Community</h3>
             <p className="text-gray-600">Our readers are at the heart of what we do. We encourage discussions and feedback from our community.</p>
           </div>
