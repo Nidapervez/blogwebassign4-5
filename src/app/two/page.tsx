@@ -8,13 +8,19 @@ const BlogPost = () => {
     <div className="bg-white text-gray-600 body-font">
       <div className="container mx-auto py-24 px-5">
         <div className="flex flex-col items-center">
-          <div className="pl-40  h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden  hover:border-blue-800 hover:border-4">
-            <Image src={image2} alt="Island Life Image" height={400} width={800} className="object-cover" />
+          <div className="max-w-xl w-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:border-blue-800 hover:border-4">
+            <Image 
+              src={image2} 
+              alt="Island Life Image" 
+              height={400} 
+              width={800} 
+              className="object-cover w-full h-64 sm:h-80 md:h-96" 
+            />
             <div className="p-6">
               <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                 CATEGORY: Island Life
               </h2>
-              <h1 className="title-font text-3xl font-medium text-gray-900 mb-3">
+              <h1 className="title-font text-2xl sm:text-3xl font-medium text-gray-900 mb-3">
                 Discovering Island Life
               </h1>
               <p className="leading-relaxed mb-3">
@@ -33,9 +39,9 @@ const BlogPost = () => {
                 Ultimately, embracing island life means cherishing the tranquility it offers and the chance to connect with nature and others in a meaningful way.
               </p>
               <div className="flex items-center flex-wrap mt-4">
-              <Link href="/">
-  <button className=" bg-slate-600 rounded-md w-20 text-black">Back</button>
-</Link>
+                <Link href="/">
+                  <button className="bg-slate-600 rounded-md w-full sm:w-20 text-black">Back</button>
+                </Link>
               </div>
             </div>
           </div>
