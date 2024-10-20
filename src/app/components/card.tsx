@@ -1,417 +1,94 @@
-import Image from 'next/image'
-import React from 'react'
+
+"use client"
+import Link from 'next/link';
+import Image from 'next/image';
 import image from "../1.jpg"; 
 import image2 from "../3.jpg"; 
 import image3 from "../11.webp"; 
 import image4 from "../5.webp"; 
 import image5 from "../6.webp"; 
 import image8 from "../2.jpg";
-import Link from 'next/link';
 
+const BlogPosts = () => {
+  const posts = [
+    {
+      id: "one",
+      title: "Different Profession",
+      content: "Explore the wide range of professions that shape our world. From creative artists to skilled tradespeople, each profession plays a vital role in society.",
+      image: image,
+    },
+    {
+      id: "two",
+      title: "Island Life",
+      content: "Island life offers a serene escape into nature, with stunning landscapes and peaceful surroundings.",
+      image: image2,
+    },
+    {
+      id: "three",
+      title: "An Unrealistic World",
+      content: "An unrealistic world is one where imagination and fantasy break the bounds of reality.",
+      image: image3,
+    },
+    {
+      id: "four",
+      title: "Research and Development",
+      content: "Research and development is crucial for innovation and advancement in various fields.",
+      image: image4,
+    },
+    {
+      id: "five",
+      title: "Future Technologies",
+      content: "The future of technology holds endless possibilities for innovation and improvement in our daily lives.",
+      image: image5,
+    },
+    {
+      id: "six",
+      title: "Digital Transformation",
+      content: "Digital transformation is changing the way businesses operate and engage with customers, enhancing efficiency and innovation.",
+      image: image8,
+    },
+  ];
 
- 
-
-const Card = () => {
   return (
-    <div><section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap -m-4">
-        {/* First Card */}
-        <div className="p-4 md:w-1/3">
-              <Link href="/one">
-                <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4">
-                  <Image src={image} alt="Blog Image" height={200} width={400} />
-                  <div className="p-6">
-                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                      CATEGORY
-                    </h2>
-                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                      Different Profession
-                    </h1>
-                    <p className="leading-relaxed mb-3 line-clamp-3">
-                      Explore the wide range of professions that shape our world. From creative artists to skilled tradespeople, each profession plays a vital role in society. Discover the unique contributions and skills behind various careers.
-                    </p>
-                    <div className="flex items-center flex-wrap">
-                      <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                        Learn More
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12h14" />
-                          <path d="M12 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                      <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                        <svg
-                          className="w-4 h-4 mr-1"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                          <circle cx={12} cy={12} r={3} />
-                        </svg>
-                        1.2K
-                      </span>
-                      <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                        <svg
-                          className="w-4 h-4 mr-1"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                        </svg>
-                        6
-                      </span>
-                    </div>
+    <>
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {posts.map(({ id, title, content, image }) => (
+              <div key={id} className="p-4">
+                <div className="bg-neutral-100 text-blue-950 p-4 border border-[#f8f5f4] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                  <div className="mb-4 flex-shrink-0">
+                    <Image
+                      alt={title}
+                      src={image}
+                      width={300}
+                      height={200}
+                      className="w-full h-48 object-cover rounded-t-lg" // Fixed height for uniformity
+                    />
+                  </div>
+
+                  <div className="flex-grow">
+                    <h2 className="text-xl font-semibold mb-2">{title}</h2>
+                    <p className="text-black mb-4 line-clamp-2">{content}</p> {/* Line clamp for two lines */}
+                  </div>
+                  <div className="mt-auto text-left">
+                    <Link
+                      href={`/${id}`} // Link to the dynamic blog post
+                      className="inline-block bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-950 transition-colors"
+                    >
+                      Read more
+                    </Link>
                   </div>
                 </div>
-              </Link>
-            </div>
-      <div className="p-4 md:w-1/3">
-      <Link href="/two">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4">
-        <Image src={image2} alt="Blog Image"height={200} width={400}  />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              CATEGORY
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            Island life
-            </h1>
-            <p className="leading-relaxed mb-3 line-clamp-3">
-            Island life offers a serene escape into nature beauty, with stunning landscapes and peaceful surroundings. Whether for relaxation or adventure, islands provide a unique experience away from the hustle and bustle. Discover paradise with endless opportunities for exploration and tranquility..
-            </p>
-            <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-        </Link>
-      </div>
-      <div className="p-4 md:w-1/3">
-      <Link href="/three">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4">
-        <Image src={image3} alt="Blog Image"height={200} width={400}  />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              CATEGORY
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            An unrealistic world
-            </h1>
-            <p className="leading-relaxed mb-3 line-clamp-3">
-            An unrealistic world is one where imagination and fantasy break the bounds of reality. It a place where anything is possible, from flying cities to talking animals. Escape into this extraordinary realm where the rules of physics and logic dont apply, and dreams come aliv.
-            </p>
-            <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-          </div>
-        </div>
-        </Link>
-      </div>
-      <div className="p-4 md:w-1/3">
-      <Link href="/four">
+      </section>
 
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4">
-        <Image src={image4} alt="Blog Image" height={200} width={400} />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              CATEGORY
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            Technology
-            </h1>
-            <p className="leading-relaxed mb-3 line-clamp-3">
-            Technology is transforming the way we live, work, and connect with the world. From AI innovations to advanced communication tools, it continues to push the boundaries of whats possible. Embrace the digital revolution and discover how technology shapes the future of humanity.
-            </p>
-            <div className="flex items-center flex-wrap">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-          </div>
-        </div>
-        </Link>
-      </div>
+  
+    </>
+  );
+};
 
-      <div className="p-4 md:w-1/3">
-      <Link href="/five">
-
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4">
-        <Image src={image8} alt="Blog Image" height={200} width={400} />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              CATEGORY
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-            Child activities
-            </h1>
-            <p className="leading-relaxed mb-3 line-clamp-3">
-            Child activities foster creativity, learning, and social development. Engaging in hands-on tasks, whether its arts and crafts, interactive games, or imaginative play, helps children explore their world, express themselves, and develop important skills. These activities encourage curiosity, teamwork, and problem-solving, laying a foundation for lifelong learning and confidence.
-            </p>
-            <div className="flex items-center flex-wrap">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-          </div>
-        </div>
-        </Link>
-      </div>
-
-
-      <div className="p-4 md:w-1/3">
-      <Link href="/six">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden animate-pulse hover:border-blue-800 hover:border-4 ">
-        <Image src={image5} alt="Blog Image" height={200} width={400} />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              CATEGORY
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3 ">
-              AI minds
-            </h1>
-            <p className="leading-relaxed mb-3 line-clamp-3">
-            AI minds represent the next frontier in intelligence, capable of learning, adapting, and solving complex problems. These advanced systems mimic human thought processes but operate at unprecedented speeds. Explore the limitless potential of AI minds in reshaping industries and everyday life.
-            </p>
-            <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-          </div>
-        </div>
-        </Link>
-      </div>
-    </div>
- 
-  </div>
-</section>
-</div>
-  )
-}
-
-export default Card
+export default BlogPosts;
