@@ -2,9 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import image2 from "../3.jpg"; // Add your new image path
+import Navbar from '../components/navbar';
 
 const BlogPost = () => {
   return (
+    <>
+    <Navbar/>
     <div className="bg-white text-gray-600 body-font">
       <div className="container mx-auto py-24 px-5">
         <div className="flex flex-col items-center">
@@ -48,6 +51,7 @@ const BlogPost = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
