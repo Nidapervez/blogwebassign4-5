@@ -4,7 +4,7 @@ import image from "../nidz.jpg";
 
 export default function Footer() {
     return (
-      <footer className="text-gray-600 body-font bg-gray-100">
+      <footer className="text-gray-600  font-mono text-xl  body-font bg-rose-100">
         <div className="container px-5 py-16 mx-auto flex flex-col md:flex-row md:items-start">
           <div className="w-full md:w-1/4 flex-shrink-0 mx-auto text-center md:text-left mb-10 md:mb-0">
             <a className="flex title-font font-medium items-center justify-center md:justify-start text-gray-900">
@@ -21,7 +21,7 @@ export default function Footer() {
               <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
                 LINKS
               </h2>
-              <nav className="flex space-x-4 mb-10">
+              <nav className="flex space-x-28 mb-10 ">
                 <li>
                   <a 
                     href="https://second-mile-stone-96sf.vercel.app/project" 

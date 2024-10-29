@@ -10,8 +10,8 @@ export default function Keyframe() {
    <div> <Navbar/>
    
    <div className={styles.box}>
-  <h4 className="font-bold text-3xl">Welcome to Blogging Website</h4>
-  <p className="text-2xl">Read our blogs</p>
+  <h4 className="font-bold text-3xl text-center font-mono">Welcome to Blogging Website</h4>
+  <p className="text-2xl text-center font-serif">Read our blogs</p>
   <div className={styles.img}>
     <Image src={image} alt="Blog Image" layout="responsive" width={300} height={200} />
     <div className={styles.content}>
