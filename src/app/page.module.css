@@ -1,22 +1,20 @@
 .img {
-  margin: 20px 0; /* Add vertical spacing */
   position: relative;
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center the image */
-  border: 2px solid black;
-  width: 100vw; /* Set the width to full viewport width */
-  height: 100vh; /* Set the height to full viewport height */
-  overflow: hidden; /* Hide overflow for the content animation */
+  margin: 20px 0; /* Add vertical spacing */
+  width: 100%; /* Set width to full */
+  height: 50vh; /* Default height for larger screens */
+  overflow: hidden; /* Hide overflow */
 }
 
 .img img {
   position: absolute; /* Positioning the image */
-  top: 50%; /* Center the image vertically */
-  left: 50%; /* Center the image horizontally */
-  width: 100vw; /* Make the image cover the full width */
-  height: auto; /* Maintain the aspect ratio */
-  transform: translate(-50%, -50%); /* Adjust positioning */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the image cover the full width */
+  height: 100%; /* Make the image cover the full height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
 }
+
 .content {
   color: #fff;
   font-size: larger;
@@ -25,9 +23,14 @@
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust to truly center */
-  height: auto; /* Adjust height as needed */
-  width: auto; /* Adjust width as needed */
-  padding: 50px;
+  padding: 20px; /* Adjust padding */
   box-sizing: border-box;
   transition: all 0.9s;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .img {
+    height: 30vh; /* Adjust height for mobile view */
+  }
 }
