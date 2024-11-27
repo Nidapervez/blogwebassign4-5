@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '../components/navbar';
 
+
 export default function Blogs() {
   const blogPosts = [
     {
@@ -50,6 +51,7 @@ export default function Blogs() {
               <Link href={post.link}
                  className="text-blue-600 hover:text-blue-700 mt-4 block text-sm font-medium">Read More →
               </Link>
+             
             </div>
           ))}
         </div>

@@ -8,6 +8,7 @@ import image3 from "../11.webp";
 import image4 from "../5.webp"; 
 import image5 from "../6.webp"; 
 import image8 from "../2.jpg";
+import Comment from '@/app/components/comment'
 
 const BlogPosts = () => {
   const posts = [
@@ -85,7 +86,7 @@ const BlogPosts = () => {
           </div>
         </div>
       </section>
-
+< Comment/>
   
     </>
   );

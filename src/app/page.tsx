@@ -1,8 +1,10 @@
+
 import Image from "next/image";
 import styles from "./page.module.css"; // Import your CSS module
 import image from "../app/1.webp"; // Import the image from the app folder
 import Navbar from "./components/navbar";
 import Card from "./components/card";
+
 
 export default function Keyframe() {
   return (
@@ -20,6 +22,7 @@ export default function Keyframe() {
         </div>
       </div>
       <Card />
+      
     </div>
   );
 }
